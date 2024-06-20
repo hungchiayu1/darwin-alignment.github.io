@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Reward Steering with Evolutionary Heuristics for Decoding-time Alignment.">
+  <meta name="keywords" content="alignment, llm, reward guided, ">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reward Steering with Evolutionary Heuristics for Decoding-time Alignment</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Reward Steering with Evolutionary Heuristics for Decoding-time Alignment</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=RgUB8xgAAAAJ&hl=en">Chia-Yu Hung</a><sup>1</sup></span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=RgUB8xgAAAAJ&hl=en">Navonil Majumder</a><sup>1</sup></span>
+            <span class="author-block">
+              <a href="https://scholar.google.com.sg/citations?user=4q8VxIIAAAAJ&hl=en">Ambuj Mehrish</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://soujanyaporia.github.io/">Soujanya Poria1</a><sup>1</sup>,
+            </span>
+            
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>SUTD</span>
+          
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://github.com/declare-lab/darwin"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://github.com/declare-lab/darwin"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              
+    
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">DARWIN</span> learns to retrieve, generate and critique to enhance LM's output quality and factuality, outperforming ChatGPT and retrieval-augmented LLama2 Chat on six tasks.  
+      </h2>
+      <img src="static/images/darwin_overview.png" alt="BUFFET teaser.">
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Summary</h2>
+        <div class="content has-text-justified">
+          <p><b>The Problem: Alignment tax</b><br>Preference optimization fine-tunes LLM to align them to human preference. However, such methods may result drop of performance in LLM on certain task. Learning specific human preference User preference may also shift, resulting in LLM becoming unaligned. 
+          <p><b>Aligning without finetuning </b><br> Decoding time alignment address these issue through trading inference latency with model alignment performance. Through framing LLM generation as a tree search process, models can be aligned through using a reward model to guide the tree search.
+          Previous similar approaches  did not  employ reward-guided search effectively, achieving almost no performance increase on instruction-following benchmarks.</p>
+          <!-- <p> Can we train a model that can decide when to retrieve, judges if retrieved passages are indeed helpful and generates conditioned on them? Can we build a reliable instruction-following LM that can provide citations?</p> -->
+          <p><b>What is <b><span style="color: red">Darwin</span></b>?</b><br>
+           <span style="color: red"><b>Darwin</b></span> is a decode time inference technique that is based on <b>reward-guided tree search</b> framework to align the LLM. Through combining different strategies of exploration and exploitation of the <b>reward-guided tree search</b>,
+           we balance the exploration and exploitation of rewards, minimizing reward over-optimization and improve model alignment. We employ an off-the-shelf reward model from RewardBench to guide the tree search.
+          
+            <p><b>How good is <b><span style="color: red">Darwin</span></b>?</b><br>
+            Experiments show that <b><span style="color: red">Darwin</span>  significantly outperforms other decode-time alignment techniques such as ARGS on  two popular instruction-following benchmarks Alpaca Eval2 and MT-bench</b>. 
+           Additionally, <span style="color: red">Darwin</span> outperforms direct alignment techniques such as DPO on MT-bench and achieve comparable performance on Alpaca Eval2.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Reward Steering with Evolutionary Heuristics for Decoding-time Alignment</h2>
+        <!-- Interpolating. -->
+        <!-- <h3 class="title is-4">Overall Model Performance</h3> -->
+        <div class="content has-text-justified">
+          <p>
+          <span style="color: red"><b>Darwin</b></span> is a new framework that frames decoding time alignment as  <span style="color: red"><b>reward guided tree search</b></span> and combines <b>tree exploration</b> and exploitation in the search process. In particular, tree exploration can be defined as 
+          </p>
+          <ul>
+            <li><b>Sample N generation:</b> Exploring the tree N times guided by an instruction </li>
+            <li><b>Instruction Mutation: </b>LLM are prompted to mutate instruction into N instruction through adding/removing details or rephrasing. Explore the tree N times guided by N instructions. </li>
+          </ul>
+          <b>Tree exploitation</b> can be defined as
+          <ul>
+            <li><b>Best-of-N:</b> Return the highest reward state among N state at any point in the tree.  </li>
+            <li><b>Reward-guided beam replacement: </b>  Exploration that leads to low reward states are replaced by high reward states during the tree search. Search is continued from the high reward state.</li>
+          </ul>
+          Below, we show a detailed iteration of <span style="color: red"><b>Darwin</b></span> that combines tree exploration and exploitation technique. This process can be applied for multiple iteration, generating better outputs at each iteration. </br> 
+          <img src="static/images/darwin_detail.png" alt="special tokens">
+        </div>
+        <div class="columns is-vcentered interpolation-panel">
+        </div>
+        <br/>
+      
+        <div class="content has-text-justified">
+          <h3 class="title is-4">Inference </h3>
+          <p>
+           
+          </p>
+          <ul>
+            <li><span style="color: red"><b>Instruction mutation: </b></span>Darwin mutates a given candidate instruction into several mutated instructions to explore the search tree more effectively via several instructions</li>
+            <li><span style="color: red"><b>Tree-search with reward-guided beam replacement: </b></span> Darwin replace low reward states with higher reward states in the search process for every m tokens generated.</li>
+            <li><span style="color: red"><b>Iterative evolution: </b></span> Darwin creates an archive containing past mutated instructions and samples the archive to perform mutation  and search again.</li>
+          </ul>
+        </div>
+      
+      </section>
+      <section class="section">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column is-full-width">
+              <h2 class="title is-3">Results and Analysis</h2>
+              <div class="columns is-vcentered interpolation-panel">
+              </div>
+              <br/>
+              <div class="content has-text-justified">
+                <h3 class="title is-4">Main Results</h3>
+                <p>
+                <span style="color: red"><b>Darwin</b></span> outperforms direct alignment methods on MT-bench and achieve comparable performance to direct alignment methods on Alpaca Eval2.
+                </p>
+                <img src="static/images/result.png" alt="results">
+              </div>
+              <!-- <div class="content has-text-justified">
+                <h3 class="title is-4">Analysis</h3>
+                <img src="static/images/analysis_result_1.png" alt="analysis results">
+                <h4 class="title is-8">(A) Ablations</h4>
+                <p>Our ablation results show that all training and inference components play important roles to improve performance off Self-RAG.</p>
+
+                <h4 class="title is-8">(B) Inference-time customization via critique tokens</h4> 
+                <p>Self-RAG enables practitioners to tailor model's behaviors for different fine-grained preferences. For instance, putting more emphasis on whether a model generation is supported by the evidence can increase citation precision (precision in Figure (b)) on long-form generation, while putting less emphasis on it can increase the output fluency as a model may generate output more flexibly and fluently, regardless of whether it is supported by the cite evidence.</p>
+                <h4 class="title is-8">(C) Adaptive retrieval via retrieval tokens</h4>
+                <p>Self-RAGgenerates retrieval tokens by itself when it judges retrieval is necessary, while one can also increase or decrease retrieval frequency based on diverse end tasks. As you can see, retrieval less can hurt performance on Open domain QA (PopQA; 40% relative performance drop) while it gives marginal performance deterioration in fact verification task (PubHealth; 2%).</p>
+              </div> -->
+            </section>
+      
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{INSERT BIBTEX
+    }</code></pre>
+  </div>
+</section>
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/declare-lab/darwin" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
