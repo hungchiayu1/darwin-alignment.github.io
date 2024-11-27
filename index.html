@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Reward Steering with Evolutionary Heuristics for Decoding-time Alignment.">
+        content="Inference Time Alignment with Reward-Guided Tree Search">
   <meta name="keywords" content="alignment, llm, reward guided, ">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Reward Steering with Evolutionary Heuristics for Decoding-time Alignment</title>
+  <title>Inference Time Alignment with Reward-Guided Tree Search</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -33,7 +33,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Reward Steering with Evolutionary Heuristics for Decoding-time Alignment</h1>
+          <h1 class="title is-1 publication-title">Inference Time Alignment with Reward-Guided Tree Search</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://scholar.google.com/citations?user=RgUB8xgAAAAJ&hl=en">Chia-Yu Hung</a><sup>1</sup></span>
@@ -88,7 +88,6 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">DARWIN</span> learns to retrieve, generate and critique to enhance LM's output quality and factuality, outperforming ChatGPT and retrieval-augmented LLama2 Chat on six tasks.  
       </h2>
       <img src="static/images/darwin_overview.png" alt="BUFFET teaser.">
     </div>
@@ -101,17 +100,14 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Summary</h2>
         <div class="content has-text-justified">
-          <p><b>The Problem: Alignment tax</b><br>Preference optimization fine-tunes LLM to align them to human preference. However, such methods may result drop of performance in LLM on certain task. Learning specific human preference User preference may also shift, resulting in LLM becoming unaligned. 
-          <p><b>Aligning without finetuning </b><br> Decoding time alignment address these issue through trading inference latency with model alignment performance. Through framing LLM generation as a tree search process, models can be aligned through using a reward model to guide the tree search.
-          Previous similar approaches  did not  employ reward-guided search effectively, achieving almost no performance increase on instruction-following benchmarks.</p>
           <!-- <p> Can we train a model that can decide when to retrieve, judges if retrieved passages are indeed helpful and generates conditioned on them? Can we build a reliable instruction-following LM that can provide citations?</p> -->
           <p><b>What is <b><span style="color: red">Darwin</span></b>?</b><br>
-           <span style="color: red"><b>Darwin</b></span> is a decode time inference technique that is based on <b>reward-guided tree search</b> framework to align the LLM. Through combining different strategies of exploration and exploitation of the <b>reward-guided tree search</b>,
+           <span style="color: red"><b>Darwin</b></span> is a inference time alignment technique that is based on <b>reward-guided tree search</b> framework to align the LLM. Through combining different strategies of exploration and exploitation of the <b>reward-guided tree search</b>,
            we balance the exploration and exploitation of rewards, minimizing reward over-optimization and improve model alignment. We employ an off-the-shelf reward model from RewardBench to guide the tree search.
           
             <p><b>How good is <b><span style="color: red">Darwin</span></b>?</b><br>
-            Experiments show that <b><span style="color: red">Darwin</span>  significantly outperforms other decode-time alignment techniques such as ARGS on  two popular instruction-following benchmarks Alpaca Eval2 and MT-bench</b>. 
-           Additionally, <span style="color: red">Darwin</span> outperforms direct alignment techniques such as DPO on MT-bench and achieve comparable performance on Alpaca Eval2.
+            Experiments show that <b><span style="color: red">Darwin</span>  significantly outperforms other inference time alignment techniques such as ARGS on  two popular instruction-following benchmarks Alpaca Eval2 and MT-bench</b>. 
+           Additionally, <span style="color: red">Darwin</span> outperforms direct alignment techniques on MT-bench and achieve comparable performance on Alpaca Eval2.
           </p>
         </div>
       </div>
